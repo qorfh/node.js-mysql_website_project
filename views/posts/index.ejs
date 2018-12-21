@@ -63,11 +63,11 @@
     var totalPage = pasing.totalPage
     var curPage = pasing.curPage
 %>
-
-
+      <%if (curPage>1){%>
       <li value="(startPage-1)" >
-        <a href="/posts?page=<%= (startPage-1) %>">이전페이지</a>
+        <a href="/posts?page=<%= (curPage-1) %>">이전페이지</a>
       </li>
+      <%}%>
 
     <% for(var i = startPage; i<=endPage; i++){
       if (i > totalPage) {break;}
@@ -85,9 +85,11 @@
       <% } %>
     <% } %>
 
+    <%if (curPage < totalPage){ %>
       <li value="(endPage + 1)" >
-        <a href="/posts?page=<%=(endPage+1) %>">다음페이지</a>
+        <a href="/posts?page=<%=(curPage+1) %>">다음페이지</a>
       </li>
+    <% } %>
   </ul>
 </div>
     
