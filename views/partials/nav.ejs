@@ -1,0 +1,31 @@
+<!-- views/partials/nav.ejs -->
+
+<nav class="navbar navbar-default">
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a href="/"><div class="navbar-brand">영화에 미치다</div></a>
+		</div>
+		<div class="collapse navbar-collapse" id="myNavbar">
+			<ul class="nav navbar-nav">
+				<li><a href="/about">MOVIEHOLIC</a></li>
+				<li><a href="/content">CONTENTS</a></li>
+				<li><a href="/posts">BOARD</a></li>
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+				<% if(isAuthenticated){ %>
+					<li><a href="/auth/logout">LOGOUT</a></li>
+					<li><a href="/contact">CONTACT US</a></li>
+				<% } else { %>
+					<li><a href="/auth/login">LOGIN</a></li>
+					<li><a href="/auth/join">JOIN</a></li>
+					<li><a href="/contact">CONTACT US</a></li>
+				<% } %>
+			</ul>
+		</div>
+	</div>
+</nav>
