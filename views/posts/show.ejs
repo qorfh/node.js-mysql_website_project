@@ -31,8 +31,8 @@
     <div class="showButtons">
       <a href="/posts" class="showBtn">Back</a>
       <a href="/posts/<%= boards.id %>/edit" class="showBtn">Edit</a>
-      <form class="delt" action="/posts/<%= boards.id %>/delete" method="post">
-        <button class="showBtn">Delete</button>
+      <form class="delt" action="/posts/<%= boards.id %>?_method=delete" method="post">
+        <a class="showBtn" href="#" onclick="confirm('정말로 삭제하시겠습니까?')?this.parentElement.submit():null;">Delete</a>
       </form>
     </div>
     

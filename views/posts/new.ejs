@@ -2,6 +2,9 @@
 <html>
 <head>
   <% include ../partials/head %>
+  <!-- ckeditor -->
+  <script type="text/javascript" src="../../ckeditor/ckeditor.js"></script>
+
 </head>
 <body>
   <% include ../partials/nav %>
@@ -31,12 +34,12 @@
     </div>
     
   </form>
-</div>    
-    <script>
-        CKEDITOR.replace('editor1',{
-        filebrowserUploadUrl:'/upload',
-         });
-    </script>
+</div>
+<script>
+    CKEDITOR.replace('editor1',{
+     language:"ko"
+     });
+</script>
 
 
 </body>

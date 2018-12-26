@@ -125,12 +125,12 @@ router.get('/:id/edit', util.isLoggedin, checkPermission, function(req,res){
 });
 
 // Update
-router.post('/:id/edit', util.isLoggedin, checkPermission, function(req,res){
+router.put('/:id', util.isLoggedin, checkPermission, function(req,res){
 	var title = req.body.title;
 	var description = req.body.description;
 	var author = req.user.username;
 	var id = req.params.id;
-	var sql = 'update board set title=?, description=?, author=? where id=?';
+	var sql = 'update board set title=?, description=?, author=?, reg_date=now() where id=?';
 	conn.query(sql, [title, description, author, id], function(err, result, fields){
 		if(err){
 			console.log(err);
@@ -141,7 +141,7 @@ router.post('/:id/edit', util.isLoggedin, checkPermission, function(req,res){
 })
 
 // Delete (post/편집)
-router.post('/:id/delete', util.isLoggedin, checkPermission, function(req,res){
+router.delete('/:id', util.isLoggedin, checkPermission, function(req,res){
 	var id = req.params.id;
 	var sql = 'delete from board where id = ?';
 	conn.query(sql, [id], function(err, result){

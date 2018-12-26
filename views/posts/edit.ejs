@@ -2,13 +2,16 @@
 <html>
 <head>
   <% include ../partials/head %>
+  <!-- ckeditor -->
+  <script type="text/javascript" src="../../ckeditor/ckeditor.js"></script>
+
 </head>
 <body>
   <% include ../partials/nav %>
   <div class="container post post-index">
     <% include ./partials/header%>
 
-    <form class="post-form form-horizontal" action="/posts/<%= boards.id %>/edit" method="post">
+    <form class="post-form form-horizontal" action="/posts/<%= boards.id %>?_method=put" method="post">
     <div class="contentNew">
       <div class="newAuth">
         <span class="newBox">title</span>
@@ -38,11 +41,11 @@
  
   </form>
  </div>
-    <script>
-        CKEDITOR.replace('editor1',{
-         filebrowserUploadUrl:'/upload',
-         });
-     </script>
+<script>
+    CKEDITOR.replace('editor1',{
+     language:"ko"
+     });
+</script>
 
 </body>
 </html>
