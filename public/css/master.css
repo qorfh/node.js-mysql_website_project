@@ -223,3 +223,7 @@ body{backco}
 .newAuth{
 	border: solid 1px #ccc;
 }
+#editor{
+height: 300px;
+width: 642px;
+}

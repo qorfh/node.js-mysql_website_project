@@ -2,9 +2,6 @@
 <html>
 <head>
   <% include ../partials/head %>
-  <!-- ckeditor -->
-  <script type="text/javascript" src="../../ckeditor/ckeditor.js"></script>
-
 </head>
 <body>
   <% include ../partials/nav %>
@@ -26,7 +23,7 @@
     
 
     <div>
-      <textarea id="editor1" name="description" placeholder="description">
+      <textarea id="editor" name="description" placeholder="글을 입력해주세요.">
         <%= boards.description %>
       </textarea>
     </div>
@@ -41,11 +38,6 @@
  
   </form>
  </div>
-<script>
-    CKEDITOR.replace('editor1',{
-     language:"ko"
-     });
-</script>
 
 </body>
 </html>

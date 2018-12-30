@@ -8,8 +8,9 @@ var passport = require('./config/mysql/passport')(app);
 var server = http.createServer(app);
 
 app.use(express.static(__dirname + '/public'));
-app.use('/upload', express.static('uploads'));
+//app.use('/upload', express.static('uploads'));
 //가상 경로 설정, 내부적으로 /upload라는 가상경로로 접근
+
 console.log(__dirname);
 app.use(methodOverride("_method"));
 
@@ -23,6 +24,7 @@ app.use(function(req,res,next){
 // Routes
 app.use('/', require('./routes/home'));
 app.use('/posts', require('./routes/posts'));
+//app.use('/upload', require('./routes/upload'));
 
 var auth = require('./routes/auth')(passport);
 app.use('/auth', auth);
