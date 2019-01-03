@@ -30,6 +30,6 @@ var auth = require('./routes/auth')(passport);
 app.use('/auth', auth);
 
 
-server.listen(process.env.PORT || 8080, function(){
+server.listen(process.env.PORT || 8000, function(){
 	console.log("8080포트에서 웹서버 가동중");
 })
