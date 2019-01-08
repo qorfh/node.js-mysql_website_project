@@ -71,7 +71,7 @@ router.get('/', function(req,res){
 });
 
 // Show (글 상세보기)
-router.get('/detail/:id', function(req,res){
+router.get('/:id', function(req,res){
 	console.log("req.params.id -> id : " + req.params.id);
 	var id = req.params.id;
 	var sql = 'select * from board where id = ?';
